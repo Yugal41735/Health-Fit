@@ -1,15 +1,13 @@
 package com.example.healthuijava;
 
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.google.android.material.snackbar.Snackbar;
+
 import com.google.android.material.navigation.NavigationView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -64,13 +62,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-//        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -157,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                                             : dataSet.getDataPoints().get(0).getValue(Field.FIELD_STEPS).asInt();
                             Log.d(TAG, "Total steps: " + total);
                             //display counts on screen
-//                            counter.setText(String.format(Locale.ENGLISH, "%d", total));
+                            counter.setText(String.format(Locale.ENGLISH, "%d", total));
                         })
                 .addOnFailureListener(
                         e -> Log.w(TAG, "There was a problem getting the step count.", e));
